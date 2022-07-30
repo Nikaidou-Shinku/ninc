@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 pub const CONFIG_FILE: &str = "config.toml";
 pub const STORAGE_FILE: &str = "storage.json";
 
@@ -18,6 +20,15 @@ pub const ECARD_URL: &str = "https://portal-service.nwpu.edu.cn/v2/personalData/
 pub const ECARD_DETAIL_URL: &str = "https://portal-service.nwpu.edu.cn/portalCenter/api/rest/center/personalData/getMyCost";
 
 pub const EDU_LOGIN_URL: &str = "https://jwxt.nwpu.edu.cn/student/sso-login";
+pub const EDU_EVAL_INIT: &str = "https://jwxt.nwpu.edu.cn/student/for-std/evaluation/summative";
+pub const EDU_EVAL_AUTH: &str = "https://jwxt.nwpu.edu.cn/evaluation-student-backend/api/v1/evaluation/token-check";
 pub const EDU_EVAL_SEME: &str = "https://jwxt.nwpu.edu.cn/evaluation-student-backend/api/v1/evaluation/get-enable-semesters";
+
+pub fn EDU_EVAL_LIST(seme: i32) -> String {
+  format!("https://jwxt.nwpu.edu.cn/evaluation-student-backend/api/v1/student/summative-evaluation/task/semester/{}", seme)
+}
+pub fn _EDU_EVAL(id: i32) -> String {
+  format!("https://jwxt.nwpu.edu.cn/evaluation-student-backend/api/v1/evaluation/survey/{}", id)
+}
 
 pub const _PUBKEY_URL: &str = "https://uis.nwpu.edu.cn/cas/jwt/publicKey";

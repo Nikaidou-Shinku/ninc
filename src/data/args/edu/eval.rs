@@ -2,7 +2,9 @@ use clap::{Args, Subcommand};
 
 #[derive(Args)]
 pub struct ListArgs {
-
+  /// Semesters id
+  #[clap(short)]
+  pub seme: i32,
 }
 
 #[derive(Subcommand)]

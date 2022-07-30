@@ -63,7 +63,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Commands::Edu(edu_cmd) => {
       match edu_cmd {
         EduCommands::Eval(eval_cmd) => {
-          if let Err(err) = eval(eval_cmd).await {
+          if let Err(err) = eval(&storage, eval_cmd).await {
             eprintln!("Query failed!\n{}", err);
           }
         }
